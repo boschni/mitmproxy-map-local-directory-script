@@ -11,9 +11,9 @@ mitmproxy -s "/path/to/map_local_directory.py --map http://site1.com/url/to/stat
 Requests like `http://site1.com/url/to/statics/js/somefile.js` will be mapped to `/projects/site1/statics/js/somefile.js` and requests like `http://site2.com/public/js/main.js` will be mapped to `/projects/site2/js/main.js`.
 Any request that does not match the url or with a file on the local file system will pass through unchanged.
 
-## Only process requests to example.com
+## Only process requests to site1.com
 ```bash
-mitmproxy --ignore '^(?!example\.com)' -s "/path/to/map_local_directory.py --map http://site1.com/url/to/statics /projects/site1/statics http://site2.com/public/js /projects/site2/js"
+mitmproxy --ignore '^(?!site1\.com)' -s "/path/to/map_local_directory.py --map http://site1.com/url/to/statics /projects/site1/statics"
 ```
 
 ## Enabling/disabling the OS-X proxy from the terminal
